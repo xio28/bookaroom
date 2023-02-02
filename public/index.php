@@ -20,7 +20,7 @@
      * Use the controllers
      */
     use App\Controllers\BookingController;
-    use App\Controllers\UsersController;
+    new \App\Controllers\UsersController;
     use App\Controllers\RoomsController;
     use App\Controllers\LoginController;
 
