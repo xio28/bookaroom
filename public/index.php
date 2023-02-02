@@ -20,7 +20,7 @@
      * Use the controllers
      */
     use App\Controllers\BookingController;
-    use \App\Controllers\UsersController;
+    use App\Controllers\UsersController;
     use App\Controllers\RoomsController;
     use App\Controllers\LoginController;
 
@@ -40,17 +40,10 @@
     /**
      * Create new instances of the `UsersController`, `RoomsController`, `LoginController`, `BookingController` classes
      */
-    $userClass = 'App\Controllers\UsersController';
-    $roomClass = 'App\\Controllers\\RoomsController';
-    $loginClass = 'App\\Controllers\\LoginController';
-    $bookingClass = 'App\\Controllers\\BookingController';
-
-    $userClass = '\\' . str_replace(DIRECTORY_SEPARATOR, '\\', 'App\Controllers\UsersController');
-
-    $user = new $userClass();
-    $room = new $roomClass();
-    $login = new $loginClass();
-    $booking = new $bookingClass();
+    $user = new UsersController();
+    $room = new RoomsController();
+    $login = new LoginController();
+    $booking = new BookingController();
 
     /**
      * Shows the template based on the provided resource (url)
