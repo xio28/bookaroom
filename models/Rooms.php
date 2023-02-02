@@ -73,7 +73,8 @@ class Rooms implements CrudInterface {
         $query = $this->conn->prepare("SELECT * FROM rooms");
         $query->execute();
 
-        return $query->fetchAll();
+        $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+        return $result ? $result : [];
     }
 
     /**
@@ -81,12 +82,13 @@ class Rooms implements CrudInterface {
      * @param int $id The id of the rooms
      * @return array An array of rooms records with the same $id
      */
-    public function selectById(int $id) : bool {
+    public function selectById(mixed $id) : array {
         $query = $this->conn->prepare("SELECT * FROM users WHERE id=:id");
         $query->bindValue(":id", $id, \PDO::PARAM_INT);
         $query->execute();
 
-        return $query->fetch(\PDO::FETCH_ASSOC);
+        $result = $query->fetch(\PDO::FETCH_ASSOC);
+        return $result ? $result : [];
     }
 
     /**
@@ -107,10 +109,10 @@ class Rooms implements CrudInterface {
     
     /**
      * Delete a room record from the database based on its id
-     * @param int $id The id of the rooms
+     * @param mixed $id The id of the rooms
      * @return bool
      */
-    public function delete(int $id) : bool {
+    public function delete(mixed $id) : bool {
         $query = $this->conn->prepare("DELETE FROM rooms WHERE id = :id");
         $query->bindValue(':id', $id, \PDO::PARAM_STR);
     

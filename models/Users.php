@@ -91,7 +91,7 @@ class Users implements CrudInterface {
      * @param int $id The id of the users
      * @return array An array of users records with the same $id
      */
-    public function selectById(int $id) : array {
+    public function selectById(mixed $id) : array {
         $query = $this->conn->prepare("SELECT * FROM users WHERE nid=:nid");
         $query->bindValue(":nid", $id, \PDO::PARAM_STR);
         $query->execute();
@@ -134,10 +134,10 @@ class Users implements CrudInterface {
 
     /**
      * Delete a users record from the database based on its id
-     * @param int $id The id of the users
+     * @param mixed $id The id of the users
      * @return bool
      */
-    public function delete(int $id) : bool {
+    public function delete(mixed $id) : bool {
         $query = $this->conn->prepare("DELETE FROM users WHERE nid = :nid");
         $query->bindValue(':nid', $id, \PDO::PARAM_STR);
     

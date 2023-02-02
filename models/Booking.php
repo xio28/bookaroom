@@ -95,7 +95,7 @@ class Booking implements CrudInterface {
      * @param int $id The id of the booking
      * @return array An array of booking records with the same $id
      */
-    public function selectById(int $id) : array {
+    public function selectById(mixed $id) : array {
         $query = $this->conn->prepare("SELECT * FROM booking WHERE book_id=:book_id");
         $query->bindValue(":book_id", $id, \PDO::PARAM_STR);
         $query->execute();
@@ -123,10 +123,10 @@ class Booking implements CrudInterface {
 
     /**
      * Delete a booking record from the database based on its id
-     * @param int $id The id of the booking
+     * @param mixed $id The id of the booking
      * @return bool
      */
-    public function delete(int $id) : bool {
+    public function delete(mixed $id) : bool {
         $query = $this->conn->prepare("DELETE FROM booking WHERE book_id = :book_id");
         
         $data['roomNumUpBooking'] = intval($data['roomNumUpBooking']);

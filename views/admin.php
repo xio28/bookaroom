@@ -45,8 +45,6 @@
      */
     $bookingTb = BookingController::getBookingList();
 ?>
-
-// Modal for adding rooms
 <div class="modal fade" id="add-room" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 25vw;">
         <div class="modal-content">
@@ -91,7 +89,7 @@
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header bg-danger">
-                        <h4 id="modal-title1" class="modal-title m-auto login">¡Atención!</h4>
+                        <h4 id="modal-title1" class="modal-title m-auto login text-white">¡Atención!</h4>
                     </div>
                     <form action="admin" method="POST" role="form">
                         <div class="modal-body">

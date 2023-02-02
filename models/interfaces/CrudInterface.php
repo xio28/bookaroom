@@ -28,10 +28,10 @@ interface CrudInterface {
     /**
      * Returns the data stored in the data storage with the given ID.
      * 
-     * @param int $id ID of the data to return.
+     * @param mixed $id ID of the data to return.
      * @return array
      */
-    public function selectById(int $id) : array;
+    public function selectById(mixed $id) : array;
     /**
      * Insert data into the database
      * 
@@ -49,10 +49,10 @@ interface CrudInterface {
     /**
      * Delete data from the database based on the ID passed as reference
      * 
-     * @param int $id ID of the data to delete.
+     * @param mixed $id ID of the data to delete.
      * @return bool
      */
-    public function delete(int $id) : bool;
+    public function delete(mixed $id) : bool;
 }
     
 ?>

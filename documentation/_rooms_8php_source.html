@@ -116,46 +116,48 @@ $(function() {
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        $query = $this-&gt;conn-&gt;prepare(<span class="stringliteral">&quot;SELECT * FROM rooms&quot;</span>);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        $query-&gt;execute();</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> $query-&gt;fetchAll();</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_app_1_1_models_1_1_rooms.html#a3a2505f43260c840f348aed3a05a58fa">   84</a></span>    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code hl_function" href="class_app_1_1_models_1_1_rooms.html#a3a2505f43260c840f348aed3a05a58fa">selectById</a>(<span class="keywordtype">int</span> $id) : bool {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        $query = $this-&gt;conn-&gt;prepare(<span class="stringliteral">&quot;SELECT * FROM users WHERE id=:id&quot;</span>);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        $query-&gt;bindValue(<span class="stringliteral">&quot;:id&quot;</span>, $id, \PDO::PARAM_INT);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        $query-&gt;execute();</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">return</span> $query-&gt;fetch(\PDO::FETCH_ASSOC);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="class_app_1_1_models_1_1_rooms.html#aa62fad2569bc89ea8525ef0f7c6c45a9">   97</a></span>    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code hl_function" href="class_app_1_1_models_1_1_rooms.html#aa62fad2569bc89ea8525ef0f7c6c45a9">update</a>(array $data) : bool {</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        $query = $this-&gt;conn-&gt;prepare(<span class="stringliteral">&quot;UPDATE rooms SET description = :description, max_capacity = :max_capacity, room_type = :room_type WHERE id = :id&quot;</span>);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        $query-&gt;bindValue(<span class="stringliteral">&#39;:description&#39;</span>, $data[<span class="stringliteral">&#39;roomDescriptionUp&#39;</span>], \PDO::PARAM_STR);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        $query-&gt;bindValue(<span class="stringliteral">&#39;:max_capacity&#39;</span>, $data[<span class="stringliteral">&#39;maxCapacityUp&#39;</span>], \PDO::PARAM_INT);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        $query-&gt;bindValue(<span class="stringliteral">&#39;:room_type&#39;</span>, $data[<span class="stringliteral">&#39;roomTypeUp&#39;</span>], \PDO::PARAM_STR);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        $query-&gt;bindValue(<span class="stringliteral">&#39;:id&#39;</span>, $data[<span class="stringliteral">&#39;roomIdUpHidden&#39;</span>], \PDO::PARAM_INT);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">return</span> $query-&gt;execute();</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="class_app_1_1_models_1_1_rooms.html#aab788f559c9ebb763f9abd0d969face2">  113</a></span>    <span class="keyword">public</span> <span class="keyword">function</span> <span class="keyword">delete</span>(<span class="keywordtype">int</span> $id) : <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        $query = $this-&gt;conn-&gt;prepare(<span class="stringliteral">&quot;DELETE FROM rooms WHERE id = :id&quot;</span>);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        $query-&gt;bindValue(<span class="stringliteral">&#39;:id&#39;</span>, $id, \PDO::PARAM_STR);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">return</span> $query-&gt;execute();</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    }</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>?&gt;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        $result = $query-&gt;fetchAll(\PDO::FETCH_ASSOC);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">return</span> $result ? $result : [];</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_app_1_1_models_1_1_rooms.html#ab703d70bd340804330fd817988fedc68">   85</a></span>    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code hl_function" href="class_app_1_1_models_1_1_rooms.html#ab703d70bd340804330fd817988fedc68">selectById</a>(mixed $id) : array {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        $query = $this-&gt;conn-&gt;prepare(<span class="stringliteral">&quot;SELECT * FROM users WHERE id=:id&quot;</span>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        $query-&gt;bindValue(<span class="stringliteral">&quot;:id&quot;</span>, $id, \PDO::PARAM_INT);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        $query-&gt;execute();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        $result = $query-&gt;fetch(\PDO::FETCH_ASSOC);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">return</span> $result ? $result : [];</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_app_1_1_models_1_1_rooms.html#aa62fad2569bc89ea8525ef0f7c6c45a9">   99</a></span>    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code hl_function" href="class_app_1_1_models_1_1_rooms.html#aa62fad2569bc89ea8525ef0f7c6c45a9">update</a>(array $data) : bool {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        $query = $this-&gt;conn-&gt;prepare(<span class="stringliteral">&quot;UPDATE rooms SET description = :description, max_capacity = :max_capacity, room_type = :room_type WHERE id = :id&quot;</span>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        $query-&gt;bindValue(<span class="stringliteral">&#39;:description&#39;</span>, $data[<span class="stringliteral">&#39;roomDescriptionUp&#39;</span>], \PDO::PARAM_STR);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        $query-&gt;bindValue(<span class="stringliteral">&#39;:max_capacity&#39;</span>, $data[<span class="stringliteral">&#39;maxCapacityUp&#39;</span>], \PDO::PARAM_INT);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        $query-&gt;bindValue(<span class="stringliteral">&#39;:room_type&#39;</span>, $data[<span class="stringliteral">&#39;roomTypeUp&#39;</span>], \PDO::PARAM_STR);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        $query-&gt;bindValue(<span class="stringliteral">&#39;:id&#39;</span>, $data[<span class="stringliteral">&#39;roomIdUpHidden&#39;</span>], \PDO::PARAM_INT);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">return</span> $query-&gt;execute();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_app_1_1_models_1_1_rooms.html#a4cc397d9e7dad3e57a07bb89c1c54536">  115</a></span>    <span class="keyword">public</span> <span class="keyword">function</span> <span class="keyword">delete</span>(mixed $id) : <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        $query = $this-&gt;conn-&gt;prepare(<span class="stringliteral">&quot;DELETE FROM rooms WHERE id = :id&quot;</span>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        $query-&gt;bindValue(<span class="stringliteral">&#39;:id&#39;</span>, $id, \PDO::PARAM_STR);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordflow">return</span> $query-&gt;execute();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>?&gt;</div>
 <div class="ttc" id="aclass_app_1_1_models_1_1_connection_html"><div class="ttname"><a href="class_app_1_1_models_1_1_connection.html">App\Models\Connection</a></div><div class="ttdef"><b>Definition:</b> <a href="_connection_8php_source.html#l00022">Connection.php:22</a></div></div>
 <div class="ttc" id="aclass_app_1_1_models_1_1_connection_html_ac93fbec81f07e5d15f80db907e63dc10"><div class="ttname"><a href="class_app_1_1_models_1_1_connection.html#ac93fbec81f07e5d15f80db907e63dc10">App\Models\Connection\getInstance</a></div><div class="ttdeci">static getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_connection_8php_source.html#l00093">Connection.php:93</a></div></div>
 <div class="ttc" id="aclass_app_1_1_models_1_1_rooms_html"><div class="ttname"><a href="class_app_1_1_models_1_1_rooms.html">App\Models\Rooms</a></div><div class="ttdef"><b>Definition:</b> <a href="_rooms_8php_source.html#l00023">Rooms.php:23</a></div></div>
 <div class="ttc" id="aclass_app_1_1_models_1_1_rooms_html_a095c5d389db211932136b53f25f39685"><div class="ttname"><a href="class_app_1_1_models_1_1_rooms.html#a095c5d389db211932136b53f25f39685">App\Models\Rooms\__construct</a></div><div class="ttdeci">__construct()</div><div class="ttdef"><b>Definition:</b> <a href="_rooms_8php_source.html#l00033">Rooms.php:33</a></div></div>
 <div class="ttc" id="aclass_app_1_1_models_1_1_rooms_html_a100b3122a56e8dbe837eefbf9ebb6e13"><div class="ttname"><a href="class_app_1_1_models_1_1_rooms.html#a100b3122a56e8dbe837eefbf9ebb6e13">App\Models\Rooms\selectAll</a></div><div class="ttdeci">selectAll()</div><div class="ttdef"><b>Definition:</b> <a href="_rooms_8php_source.html#l00072">Rooms.php:72</a></div></div>
-<div class="ttc" id="aclass_app_1_1_models_1_1_rooms_html_a3a2505f43260c840f348aed3a05a58fa"><div class="ttname"><a href="class_app_1_1_models_1_1_rooms.html#a3a2505f43260c840f348aed3a05a58fa">App\Models\Rooms\selectById</a></div><div class="ttdeci">selectById(int $id)</div><div class="ttdef"><b>Definition:</b> <a href="_rooms_8php_source.html#l00084">Rooms.php:84</a></div></div>
 <div class="ttc" id="aclass_app_1_1_models_1_1_rooms_html_a435e7d7525d4bcd0ed5e34a469f3adf6"><div class="ttname"><a href="class_app_1_1_models_1_1_rooms.html#a435e7d7525d4bcd0ed5e34a469f3adf6">App\Models\Rooms\create</a></div><div class="ttdeci">create()</div><div class="ttdef"><b>Definition:</b> <a href="_rooms_8php_source.html#l00056">Rooms.php:56</a></div></div>
 <div class="ttc" id="aclass_app_1_1_models_1_1_rooms_html_a9036c33ccb06d6070a021ec2f2d34ca9"><div class="ttname"><a href="class_app_1_1_models_1_1_rooms.html#a9036c33ccb06d6070a021ec2f2d34ca9">App\Models\Rooms\insert</a></div><div class="ttdeci">insert(array $data)</div><div class="ttdef"><b>Definition:</b> <a href="_rooms_8php_source.html#l00043">Rooms.php:43</a></div></div>
-<div class="ttc" id="aclass_app_1_1_models_1_1_rooms_html_aa62fad2569bc89ea8525ef0f7c6c45a9"><div class="ttname"><a href="class_app_1_1_models_1_1_rooms.html#aa62fad2569bc89ea8525ef0f7c6c45a9">App\Models\Rooms\update</a></div><div class="ttdeci">update(array $data)</div><div class="ttdef"><b>Definition:</b> <a href="_rooms_8php_source.html#l00097">Rooms.php:97</a></div></div>
+<div class="ttc" id="aclass_app_1_1_models_1_1_rooms_html_aa62fad2569bc89ea8525ef0f7c6c45a9"><div class="ttname"><a href="class_app_1_1_models_1_1_rooms.html#aa62fad2569bc89ea8525ef0f7c6c45a9">App\Models\Rooms\update</a></div><div class="ttdeci">update(array $data)</div><div class="ttdef"><b>Definition:</b> <a href="_rooms_8php_source.html#l00099">Rooms.php:99</a></div></div>
+<div class="ttc" id="aclass_app_1_1_models_1_1_rooms_html_ab703d70bd340804330fd817988fedc68"><div class="ttname"><a href="class_app_1_1_models_1_1_rooms.html#ab703d70bd340804330fd817988fedc68">App\Models\Rooms\selectById</a></div><div class="ttdeci">selectById(mixed $id)</div><div class="ttdef"><b>Definition:</b> <a href="_rooms_8php_source.html#l00085">Rooms.php:85</a></div></div>
 <div class="ttc" id="ainterface_app_1_1_models_1_1_interfaces_1_1_crud_interface_html"><div class="ttname"><a href="interface_app_1_1_models_1_1_interfaces_1_1_crud_interface.html">App\Models\Interfaces\CrudInterface</a></div><div class="ttdef"><b>Definition:</b> <a href="_crud_interface_8php_source.html#l00015">CrudInterface.php:15</a></div></div>
 <div class="ttc" id="anamespace_app_1_1_models_html"><div class="ttname"><a href="namespace_app_1_1_models.html">App\Models</a></div><div class="ttdef"><b>Definition:</b> <a href="models_2_booking_8php_source.html#l00010">Booking.php:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
