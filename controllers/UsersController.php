@@ -31,17 +31,18 @@ class UsersController {
      * @param array $data The form data to be cleaned and passing to the model
      * @return void
      */
-    public function handler($post) {
+    public function handler(array $post) : void {
         foreach($post as $key => $val) {
             $values[$key] = $this->sanitize($val);
         }
 
-        // var_dump($values);
-        // Ejecutamos el manejador de errores y le pasamos el DNI, el email, la contraseña y su confirmación
-
-        // Crear una instancia de la clase Users
+        /**
+         * @var object $user Instance of the Users class
+         */
         $user = new Users();
-
+        /**
+         * Depending on the contion, will run one or another method
+         */
         if(array_key_exists('signUpUser', $values)) {
             $this->errorsHandler($values['emailSignUp'], $values['passSignup'], $values['repeatPassSignup'], $values['nidSignUp']);
 
@@ -60,7 +61,15 @@ class UsersController {
         }
     }
     
-    public function errorsHandler($email, $password, $passwordConfirm, $dni) {
+    /**
+     * Get and clean the data from the form
+     * @param string $email Email retrieved from the form to be handle
+     * @param string $password Password retrieved from the form to check if is equal to @passwordConfirm
+     * @param string $passwordConfirm Repeated password retrieved from the form to check if is equal to @password
+     * @param string $nid NID retrieved from the form to be handle
+     * @return void
+     */
+    public function errorsHandler(string $email, string $password, string $passwordConfirm, string $nid) : void {
         $_SESSION['alert'] = [
             'error' => false,
             'messages' => []
@@ -72,7 +81,7 @@ class UsersController {
             $_SESSION['alert']['messages'][] = 'El email ya está registrado.';
         }
 
-        if ($user->selectById($dni)) {
+        if ($user->selectById($nid)) {
             $_SESSION['alert']['error'] = true;
             $_SESSION['alert']['messages'][] = 'El DNI ya está registrado';
         }
@@ -82,16 +91,24 @@ class UsersController {
             $_SESSION['alert']['messages'][] = 'Las contraseñas no coinciden.';
         }
     }
-
-    private function sanitize($data) {
+    /**
+     * Clean the data removing blank spaces or special characters
+     * @param string $data The data retrieved from the form
+     * @return string
+     */
+    private function sanitize(string $data) : string {
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         
         return $data;
     }
-            
-    public static function getUsersList() {
+
+    /**
+     * Retrieve all the data from the booking table
+     * @return array
+     */     
+    public static function getUsersList() : array {
         $users = new Users();
 
         return $users->selectAll();

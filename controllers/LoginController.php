@@ -40,9 +40,9 @@ class LoginController {
     /**
      * Clean the data removing blank spaces or special characters
      * @param string $data The data retrieved from the form
-     * @return array
+     * @return string
      */
-    private function sanitize($data) {
+    private function sanitize(string $data) : string {
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
