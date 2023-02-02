@@ -40,11 +40,15 @@
     /**
      * Create new instances of the `UsersController`, `RoomsController`, `LoginController`, `BookingController` classes
      */
-    var_dump(new UsersController());
-    $user = new \App\Controllers\UsersController();
-    $room = new RoomsController();
-    $login = new LoginController();
-    $booking = new BookingController();
+    $userClass = 'App\\Controllers\\UsersController';
+    $roomClass = 'App\\Controllers\\RoomsController';
+    $loginClass = 'App\\Controllers\\LoginController';
+    $bookingClass = 'App\\Controllers\\BookingController';
+
+    $user = new $userClass();
+    $room = new $roomClass();
+    $login = new $loginClass();
+    $booking = new $bookingClass();
 
     /**
      * Shows the template based on the provided resource (url)
