@@ -7,7 +7,7 @@
 /**
  * Create a namespace
  */
-namespace App\Models;
+namespace Models;
 
 /**
  * Start session if there's no one
@@ -18,8 +18,8 @@ if (session_status() == PHP_SESSION_NONE) {
 /**
  * Use the Connection class and Users
  */
-use App\Models\Connection;
-use App\Models\Users;
+use Models\Connection;
+use Models\Users;
 
 /**
  * Class Login

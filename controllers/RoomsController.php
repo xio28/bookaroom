@@ -7,11 +7,11 @@
 /**
  * Create a namespace
  */
-namespace App\Controllers;
+namespace Controllers;
 /**
  * Use the Rooms class
  */
-use App\Models\Rooms;
+use Models\Rooms;
 
 /**
  * Class RoomsController

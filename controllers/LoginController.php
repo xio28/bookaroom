@@ -7,11 +7,11 @@
 /**
  * Create a namespace
  */
-namespace App\Controllers;
+namespace Controllers;
 /**
  * Use the Login class
  */
-use App\Models\Login;
+use Models\Login;
 
 /**
  * Class LoginController

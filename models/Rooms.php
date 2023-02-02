@@ -7,13 +7,13 @@
 /**
  * Create a namespace
  */
-namespace App\Models;
+namespace Models;
 
 /**
  * Use the Connection class and CrudInterface interface
  */
-use App\Models\Connection;
-use App\Models\Interfaces\CrudInterface;
+use Models\Connection;
+use Models\Interfaces\CrudInterface;
 
 /**
  * Class Rooms

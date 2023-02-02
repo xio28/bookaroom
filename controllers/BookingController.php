@@ -7,11 +7,11 @@
 /**
  * Create a namespace
  */
-namespace App\Controllers;
+namespace Controllers;
 /**
  * Use the Booking class
  */
-use App\Models\Booking;
+use Models\Booking;
 
 /**
  * Class BookingController

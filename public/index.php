@@ -19,10 +19,10 @@
     /**
      * Use the controllers
      */
-    use App\Controllers\BookingController;
-    use App\Controllers\UsersController;
-    use App\Controllers\RoomsController;
-    use App\Controllers\LoginController;
+    use Controllers\BookingController;
+    use Controllers\UsersController;
+    use Controllers\RoomsController;
+    use Controllers\LoginController;
 
     /**
      * Retrieve the `slug` value from the URL and explode it into an array

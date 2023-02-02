@@ -7,7 +7,7 @@
 /**
  * Create a namespace
  */
-namespace App\Controllers;
+namespace Controllers;
 
 /**
  * Start session if there's no one
@@ -18,7 +18,7 @@ if (session_status() == PHP_SESSION_NONE) {
 /**
  * Use the Users class
  */
-use App\Models\Users;
+use Models\Users;
 
 /**
  * Class UsersController
