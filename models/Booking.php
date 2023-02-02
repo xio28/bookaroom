@@ -7,13 +7,13 @@
 /**
  * Create a namespace
  */
-namespace Models;
+namespace App\Models;
 
 /**
  * Use the Connection class and CrudInterface interface
  */
-use Models\Connection;
-use Models\Interfaces\CrudInterface;
+use App\Models\Connection;
+use App\Models\Interfaces\CrudInterface;
 
 /**
  * Class Booking

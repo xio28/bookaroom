@@ -18,7 +18,7 @@ if (session_status() == PHP_SESSION_NONE) {
 /**
  * Use the Users class
  */
-use Models\Users;
+use App\Models\Users;
 
 /**
  * Class UsersController

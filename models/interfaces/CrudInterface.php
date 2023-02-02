@@ -7,7 +7,7 @@
 /**
  * Create a namespace
  */
-namespace Models\Interfaces;
+namespace App\Models\Interfaces;
 
 /**
  * CrudInterface provides a set of methods for performing CRUD operations on data storage.

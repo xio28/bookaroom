@@ -7,7 +7,7 @@
 /**
  * Create a namespace
  */
-namespace Models;
+namespace App\Models;
 
 /**
  * Load the config file
