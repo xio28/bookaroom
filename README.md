@@ -27,6 +27,9 @@ You will need the following packages to be able to run the project:
 * Improve the main interface and change the room list and styles
 * Fix reload issues
 
+## Documentation
+To see the documentation go to [documentation](documentation/index.html) folder.
+
 ## Author
 * Siomara Alonso
 
