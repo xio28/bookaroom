@@ -1,20 +1,52 @@
 <?php
+    /**
+     * This file displays the admin panel
+     *
+     * The header and footer partials are required, and the header is created with the title "Panel de administrador"
+     * Have several modals for insert, update and delete; rooms can be inserted through a modal form as well as updated or deleted and users and reservations can be deleted or updated
+     * The page have several tables that displays through loops the database queries of each table: rooms, booking and users
+     * The footer is also created
+     */
     require_once 'components/header.php';
     require_once 'components/footer.php';
     
+    /**
+     * The file use users, booking and rooms controlers
+     */
     use App\Controllers\UsersController;
     use App\Controllers\RoomsController;
     use App\Controllers\BookingController;
-    use App\Models\Booking;
-
+    /**
+     * Create a header for the administrator panel.
+     * 
+     * @param string $title The title to display in the header.
+     */
     App\Views\Components\createHeader("Panel de administrador");
 
-    // var_dump($booking->selectAll());
+    /**
+     * Instances of each controller are defined and save
+     */
+    /**
+     * Retrieve a list of customers from the database.
+     * 
+     * @return array An array of customer data.
+     */
     $customersTb = UsersController::getUsersList();
+    /**
+     * Retrieve a list of rooms from the database.
+     * 
+     * @return array An array of room data.
+     */
     $roomTb = RoomsController::getRoomsList();
+    /**
+     * Retrieve a list of bookings from the database.
+     * 
+     * @return array An array of booking data.
+     */
     $bookingTb = BookingController::getBookingList();
-
 ?>
+
+// Modal for adding rooms
 <div class="modal fade" id="add-room" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 25vw;">
         <div class="modal-content">
@@ -46,9 +78,15 @@
 </div>
 
 <?php 
+    /**
+     * Generates modals for updating and deleting users
+     * 
+     * @param array $customersTb An array of users information
+     */
     if(!empty($customersTb)) :
         foreach($customersTb as $customersRow) : 
 ?>
+        
         <div class="modal fade" id="deleteCustomers<?= $customersRow['nid']; ?>" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
@@ -70,7 +108,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="modal fade" id="updateCustomers<?= $customersRow['nid']; ?>" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 25vw;">
                 <div class="modal-content">
@@ -117,7 +155,12 @@
     endif;
 ?>
 
-<?php 
+<?php
+    /**
+     * Generates modals for updating and deleting rooms
+     * 
+     * @param array $roomTb An array of rooms information
+     */
     if(!empty($roomTb)) :
         foreach($roomTb as $roomRow) : 
 ?>
@@ -179,6 +222,11 @@
 ?>
 
 <?php 
+    /**
+     * Generates modals for updating and deleting bookings
+     * 
+     * @param array $bookingTb An array of bookings information
+     */
     if(!empty($bookingTb)) :
         foreach($bookingTb as $bookingRow) : 
 ?>
@@ -307,8 +355,16 @@
                     </thead>
                     <tbody>
                         <?php 
+                            /**
+                             * Generates modals for updating and deleting bookings
+                             * 
+                             * @param array $bookingTb An array of bookings information
+                             */
                             if(!empty($bookingTb)) :
                                 foreach($bookingTb as $bookingRow) : 
+                                /**
+                                 * Generates rows with table info where each td is a column of the booking table
+                                 */
                         ?>
                             <tr>
                                 <td><?= $bookingRow['book_id'] ?></td>
@@ -359,8 +415,16 @@
                     </thead>
                     <tbody>
                         <?php 
+                            /**
+                             * Generates modals for updating and deleting users
+                             * 
+                             * @param array $customersTb An array of users information
+                             */
                             if(!empty($customersTb)) :
                                 foreach($customersTb as $customersRow) : 
+                                /**
+                                 * Generates rows with table info where each td is a column of the users table
+                                 */
                         ?>
                             <tr>
                                 <td><?= $customersRow['nid'] ?></td>
@@ -415,8 +479,17 @@
                     </thead>
                     <tbody>
                         <?php 
+                            /**
+                             * Generates modals for updating and deleting rooms
+                             * 
+                             * @param array $roomTb An array of rooms information
+                             */
                             if(!empty($roomTb)) :
                                 foreach($roomTb as $roomRow) : 
+                                /**
+                                 * Generates rows with table info where each td is a column of the rooms table
+                                 * Also buttons to open the delete and update modals are generated
+                                 */
                         ?>
                             <tr>
                                 <td><?= $roomRow['id'] ?></td>

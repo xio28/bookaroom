@@ -1,4 +1,11 @@
 <?php
+    /**
+     * This file displays the 404 error page for the website
+     *
+     * The header and footer partials are required, and the header is created with the title "BookARoom"
+     * A div is displayed with the 404 error message, including an animated Schrödinger's cat gif
+     * The footer is also created
+     */
     require_once 'components/header.php';
     require_once 'components/footer.php';
     

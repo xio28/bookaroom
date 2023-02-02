@@ -1,8 +1,15 @@
 <?php
-
+/**
+ * In this PHP file is defined a namespace "App\Views\Components" and a function "createFooter". 
+ * The function simply echoes a string with the HTML for a footer that includes several JavaScript files, such as bootstraps and JQuery libraries, and a local script for a sidebar
+ */
 namespace App\Views\Components;
 
-function createFooter() {
+/**
+ * createFooter function outputs the HTML for the footer of the website
+ * @return void
+ */
+function createFooter() : void {
     echo <<<FOOTER
                 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>

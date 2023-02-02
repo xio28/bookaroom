@@ -1,8 +1,16 @@
 <?php
-
+/**
+ * In this PHP file is defined a namespace "App\Views\Components" and a function "createHeader". 
+ * The function have a string argument which is the title of the page and echoes a string with the HTML head that includes several Bootstrap, icons, fonts, favicon links, and also a local main css
+ */
 namespace App\Views\Components;
 
-function createHeader($title) {
+/**
+ * Function to create the header of a page
+ * @param string $title The title of the page
+ * @return void
+ */
+function createHeader(string $title) : void {
     echo <<<HEADER
         <!DOCTYPE html>
         <html lang="en">
