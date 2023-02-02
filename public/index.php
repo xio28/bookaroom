@@ -40,6 +40,7 @@
     /**
      * Create new instances of the `UsersController`, `RoomsController`, `LoginController`, `BookingController` classes
      */
+    var_dump(new UsersController());
     $user = new UsersController();
     $room = new RoomsController();
     $login = new LoginController();
