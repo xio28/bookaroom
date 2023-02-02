@@ -1,20 +1,45 @@
 <?php
+/**
+ * This is a PHP code of a class named Booking that belongs to the namespace App\Models
+ * The class provides different methods to insert, update, delete or select data from the database, and also 
+ */
 
+/**
+ * Create a namespace
+ */
 namespace App\Models;
 
+/**
+ * Use the Connection class and CrudInterface interface
+ */
 use App\Models\Connection;
 use App\Models\Interfaces\CrudInterface;
 
+/**
+ * Class Booking
+ *
+ * A class for creating tables from database (if not exists), also selecting data from database, insert new data, update or delete
+ */
 class Booking implements CrudInterface {
-
+    /**
+     * @var \PDO The database connection
+     */
     private $conn;
-
+    /**
+     * Class constructor
+     * This constructor initializes the class property $conn by calling the static method getInstance on the Connection class and then calling the public method getConnection on the result, thus $conn will content the connection
+     * Additionally, it calls the method create on Booking to create the table if not exists.
+    */
     function __construct() {
-        // Esto es un singleton -> Básicamente, 
         $this->conn = Connection::getInstance()->getConnection();
         $this->create();
     }
 
+    /**
+     * Inserts a booking record into the database
+     * @param array $data The booking data to be inserted
+     * @return void
+     */
     public function insert($data) : void {
         $table = get_class($this);
         $stmt = $this->conn->prepare("INSERT INTO booking (user_nid, room_id, check_in, check_out) VALUES (:user_nid, :room_id, :check_in, :check_out)");
@@ -26,6 +51,10 @@ class Booking implements CrudInterface {
         $stmt->execute();
     }
 
+    /**
+     * Creates the booking table in the database if it doesn't exist
+     * @return void
+     */
     public function create() : void {
         $table = "CREATE TABLE IF NOT EXISTS booking(
             book_id INT(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -49,14 +78,24 @@ class Booking implements CrudInterface {
         $this->conn->exec($table);
     }
 
-    public function selectAll() {
+    /**
+     * Retrieves all booking records from the database
+     * @return array An array of booking records
+     */
+    public function selectAll() : array {
         $query = $this->conn->prepare("SELECT * FROM booking");
         $query->execute();
 
-        return $query->fetchAll();
+        $result = $query->fetchAll();
+        return $result ? $result : [];
     }
 
-    public function selectById($id) {
+    /**
+     * Retrieves a single booking record from the database based on its id
+     * @param int $id The id of the booking
+     * @return array An array of booking records with the same $id
+     */
+    public function selectById($id) : array {
         $query = $this->conn->prepare("SELECT * FROM booking WHERE book_id=:book_id");
         $query->bindValue(":book_id", $id, \PDO::PARAM_STR);
         $query->execute();
@@ -65,8 +104,12 @@ class Booking implements CrudInterface {
         return $result ? $result : [];
     }
 
-
-    public function update(array $data) :bool {
+    /**
+     * Updates a booking record from the database based on its id
+     * @param array $data The id of the booking
+     * @return bool
+     */
+    public function update(array $data) : bool {
         $query = $this->conn->prepare("UPDATE booking SET room_id = :room_id, check_in = :check_in, check_out = :check_out WHERE book_id = :book_id");
         
         $data['roomNumUpBooking'] = intval($data['roomNumUpBooking']);
@@ -77,10 +120,16 @@ class Booking implements CrudInterface {
         
         return $query->execute();
     }
-    
-    public function delete($id) : bool {
+
+    /**
+     * Delete a booking record from the database based on its id
+     * @param int $id The id of the booking
+     * @return bool
+     */
+    public function delete(int $id) : bool {
         $query = $this->conn->prepare("DELETE FROM booking WHERE book_id = :book_id");
-        // $data['roomNumUpBooking'] = intval($data['roomNumUpBooking']);
+        
+        $data['roomNumUpBooking'] = intval($data['roomNumUpBooking']);
         $query->bindValue(':book_id', $id, \PDO::PARAM_STR);
     
         return $query->execute();

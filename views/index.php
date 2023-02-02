@@ -1,4 +1,13 @@
 <?php
+    /**
+     * This file displays the main page
+     *
+     * The header and footer partials are required, and the header is created with the title "BookARoom"
+     * Have a header with a nav bar and a login icon, if there is an user logged, the icon change to a user, and if user is admin, the "Mi cuenta" change to "Panel de administrador"
+     * The page also have a gallery with the different types of rooms available
+     * Also it has a footer with company info, as privacy policy, contact info, social networks, etc.
+     * The footer is also created
+     */
     require_once 'components/header.php';
     require_once 'components/footer.php';
     

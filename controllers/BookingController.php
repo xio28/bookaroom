@@ -10,17 +10,14 @@
                 $values[$key] = $this->sanitize($val);
             }
 
-            var_dump($values);
-
-            // var_dump($values);
-            // Crear una instancia de la clase Users
+            
             $booking = new Booking();
 
             if(array_key_exists('bookRoomSubmit', $values)) {
                 $booking->insert($values);
             }
             elseif(array_key_exists('submitUpBooking', $values)) {
-                // Insertamos los valores en la base de datos con el método insert()
+                
                 $booking->update($values);
             } 
             elseif(array_key_exists('submitBookingDel', $values)) {

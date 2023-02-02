@@ -75,7 +75,9 @@
                                     <label for="repeatPassSignup">Repite la contraseña</label>
                                 </div>
                             </div>
-                            <div class="form-check mb-4">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-4">
                                 <input class="form-check-input" type="checkbox" name="policy" required>
                                 <label class="form-check-label" for="policy">
                                 Acepto la <a class="text-underline" href="" target="_blank">política de privacidad.</a>

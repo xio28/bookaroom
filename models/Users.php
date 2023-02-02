@@ -28,7 +28,7 @@ class Users implements CrudInterface {
         $stmt->execute();
     }
 
-    public function create() {
+    public function create() : void {
         $table = "CREATE TABLE IF NOT EXISTS users(
             nid VARCHAR(9) NOT NULL PRIMARY KEY,
             name VARCHAR(30) NOT NULL,
@@ -58,7 +58,7 @@ class Users implements CrudInterface {
         return $result ? $result : [];
     }
 
-    public function selectById($id) {
+    public function selectById($id) : array {
         $query = $this->conn->prepare("SELECT * FROM users WHERE nid=:nid");
         $query->bindValue(":nid", $id, \PDO::PARAM_STR);
         $query->execute();
