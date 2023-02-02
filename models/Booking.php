@@ -1,7 +1,7 @@
 <?php
 /**
  * This is a PHP code of a class named Booking that belongs to the namespace App\Models
- * The class provides different methods to insert, update, delete or select data from the database, and also 
+ * The class provides different methods to insert, update, delete or select data from the database 
  */
 
 /**
@@ -40,7 +40,7 @@ class Booking implements CrudInterface {
      * @param array $data The booking data to be inserted
      * @return void
      */
-    public function insert($data) : void {
+    public function insert(array $data) : void {
         $table = get_class($this);
         $stmt = $this->conn->prepare("INSERT INTO booking (user_nid, room_id, check_in, check_out) VALUES (:user_nid, :room_id, :check_in, :check_out)");
         $stmt->bindValue(":user_nid", $data['bookRoomNid'], \PDO::PARAM_STR); // Hay que poner una contra barra a PDO, porque si no el método entiende que es una estática de la misma clase
@@ -95,7 +95,7 @@ class Booking implements CrudInterface {
      * @param int $id The id of the booking
      * @return array An array of booking records with the same $id
      */
-    public function selectById($id) : array {
+    public function selectById(int $id) : array {
         $query = $this->conn->prepare("SELECT * FROM booking WHERE book_id=:book_id");
         $query->bindValue(":book_id", $id, \PDO::PARAM_STR);
         $query->execute();
@@ -106,7 +106,7 @@ class Booking implements CrudInterface {
 
     /**
      * Updates a booking record from the database based on its id
-     * @param array $data The id of the booking
+     * @param array $data The data retrived from the form
      * @return bool
      */
     public function update(array $data) : bool {

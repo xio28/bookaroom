@@ -1,4 +1,15 @@
 <?php
+    /**
+     * This file displays the booking page where users can make a reservation
+     *
+     * The header and footer partials are required, and the header is created with the title "Reservas"
+     * The page have a foreach where is listed the rooms that are available in the database
+     * The footer is also created
+     */
+
+    /**
+     * Start session if there's no one
+     */
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
@@ -8,7 +19,12 @@
 
     use App\Controllers\RoomsController;
     $roomTb = RoomsController::getRoomsList();
-    
+
+    /**
+     * Create a header for the booking page
+     * 
+     * @param string $title The title to display in the header
+     */
     App\Views\Components\createHeader("Reservas");
 ?>
     <div class="modal fade" id="bookRoom" role="dialog">

@@ -1,8 +1,20 @@
 <?php
+    /**
+     * This file displays the login
+     *
+     * The header and footer partials are required, and the header is created with the title "Login"
+     * The page have a single form which is used to get user information in order to log in 
+     * The footer is also created
+     */
     require_once 'components/header.php';
     require_once 'components/footer.php';
-    
-    App\Views\Components\createHeader("LogIn");
+
+    /**
+     * Create a header for the login
+     * 
+     * @param string $title The title to display in the header
+     */
+    App\Views\Components\createHeader("Login");
 ?>
 
 <section class="h-100 gradient-form bg-blurred position-relative">

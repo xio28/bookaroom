@@ -17,9 +17,9 @@
     use App\Controllers\RoomsController;
     use App\Controllers\BookingController;
     /**
-     * Create a header for the administrator panel.
+     * Create a header for the administrator panel
      * 
-     * @param string $title The title to display in the header.
+     * @param string $title The title to display in the header
      */
     App\Views\Components\createHeader("Panel de administrador");
 
@@ -27,21 +27,21 @@
      * Instances of each controller are defined and save
      */
     /**
-     * Retrieve a list of customers from the database.
+     * Retrieve a list of customers from the database
      * 
-     * @return array An array of customer data.
+     * @return array An array of customer data
      */
     $customersTb = UsersController::getUsersList();
     /**
-     * Retrieve a list of rooms from the database.
+     * Retrieve a list of rooms from the database
      * 
-     * @return array An array of room data.
+     * @return array An array of room data
      */
     $roomTb = RoomsController::getRoomsList();
     /**
-     * Retrieve a list of bookings from the database.
+     * Retrieve a list of bookings from the database
      * 
-     * @return array An array of booking data.
+     * @return array An array of booking data
      */
     $bookingTb = BookingController::getBookingList();
 ?>

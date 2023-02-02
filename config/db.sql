@@ -31,7 +31,7 @@ CREATE TABLE booking(
     CONSTRAINT `fk1_booking_user`
         FOREIGN KEY (`user_nid`) REFERENCES user (`nid`)
         ON DELETE CASCADE
-        ON UPDATE CASCADE
+        ON UPDATE CASCADE,
 
     CONSTRAINT `fk2_booking_room`
         FOREIGN KEY (`room_id`) REFERENCES user (`id`)

@@ -1,20 +1,45 @@
 <?php
+/**
+ * This is a PHP code of a class named Users that belongs to the namespace App\Models
+ * The class provides different methods to insert, update, delete or select data from the database
+ */
 
-/* Creating a namespace called App\Models */
+/**
+ * Create a namespace
+ */
 namespace App\Models;
 
-/* Importing the classes Connection and CrudInterface */
+/**
+ * Use the Connection class and CrudInterface interface
+ */
 use App\Models\Connection;
 use App\Models\Interfaces\CrudInterface;
 
+/**
+ * Class Users
+ *
+ * A class for creating tables from database (if not exists), also selecting data from database, insert new data, update or delete
+ */
 class Users implements CrudInterface {
+    /**
+     * @var \PDO The database connection
+     */
     private $conn;
-    
+    /**
+     * Class constructor
+     * This constructor initializes the class property $conn by calling the static method getInstance on the Connection class and then calling the public method getConnection on the result, thus $conn will content the connection
+     * Additionally, it calls the method create on Users to create the table if not exists.
+    */
     function __construct() {
         $this->conn = Connection::getInstance()->getConnection();
         $this->create();
     }
     
+    /**
+     * Inserts a users record into the database
+     * @param array $data The users data to be inserted
+     * @return void
+     */
     public function insert(array $data) : void {
         $stmt = $this->conn->prepare("INSERT INTO users (nid, name, surname1, surname2, email, telephone, password) VALUES (:nid, :name, :surname1, :surname2, :email, :telephone, :password)");
         $stmt->bindValue(":nid", $data['nidSignUp'], \PDO::PARAM_STR); // Hay que poner una contra barra a PDO, porque si no el método entiende que es una estática de la misma clase
@@ -28,6 +53,10 @@ class Users implements CrudInterface {
         $stmt->execute();
     }
 
+    /**
+     * Creates the users table in the database if it doesn't exist
+     * @return void
+     */
     public function create() : void {
         $table = "CREATE TABLE IF NOT EXISTS users(
             nid VARCHAR(9) NOT NULL PRIMARY KEY,
@@ -46,8 +75,7 @@ class Users implements CrudInterface {
 
     /**
      * Select all users from the database
-     * 
-     * @return array|bool An array of users or a boolean indicating success or failure
+     * @return array An array of users or a boolean indicating success or failure
      */
     public function selectAll() : array {
         $query = $this->conn->prepare("SELECT * FROM users");
@@ -58,7 +86,12 @@ class Users implements CrudInterface {
         return $result ? $result : [];
     }
 
-    public function selectById($id) : array {
+    /**
+     * Retrieves a single users record from the database based on its id
+     * @param int $id The id of the users
+     * @return array An array of users records with the same $id
+     */
+    public function selectById(int $id) : array {
         $query = $this->conn->prepare("SELECT * FROM users WHERE nid=:nid");
         $query->bindValue(":nid", $id, \PDO::PARAM_STR);
         $query->execute();
@@ -67,7 +100,12 @@ class Users implements CrudInterface {
         return $result ? $result : [];
     }
 
-    public function selectByEmail($email) : array {
+    /**
+     * Retrieves a single users record from the database based on its email
+     * @param string $email The email of the user
+     * @return array An array of users records with the same $email
+     */
+    public function selectByEmail(string $email) : array {
         $query = $this->conn->prepare("SELECT * FROM users WHERE email=:email");
         $query->bindValue(":email", $email, \PDO::PARAM_STR);
         $query->execute();
@@ -76,6 +114,11 @@ class Users implements CrudInterface {
         return $result ? $result : [];
     }
 
+    /**
+     * Updates a users record from the database based on its id
+     * @param array $data The data retrived from the form
+     * @return bool
+     */
     public function update(array $data) : bool {
         $query = $this->conn->prepare("UPDATE users SET name = :name, surname1 = :surname1, surname2 = :surname2, email = :email, telephone = :telephone WHERE nid = :nid");
 
@@ -88,8 +131,13 @@ class Users implements CrudInterface {
         
         return $query->execute();
     }
-    
-    public function delete($id) : bool {
+
+    /**
+     * Delete a users record from the database based on its id
+     * @param int $id The id of the users
+     * @return bool
+     */
+    public function delete(int $id) : bool {
         $query = $this->conn->prepare("DELETE FROM users WHERE nid = :nid");
         $query->bindValue(':nid', $id, \PDO::PARAM_STR);
     

@@ -11,6 +11,11 @@
     require_once 'components/header.php';
     require_once 'components/footer.php';
     
+    /**
+     * Create a header for the index page
+     * 
+     * @param string $title The title to display in the header
+     */
     App\Views\Components\createHeader("BookARoom");
 ?>
         <header class="vh-100">
