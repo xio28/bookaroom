@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'a94ab1e99bec193249bd85f820e5f98408235112',
+    'reference' => '75bdb6c9c862ba4596f5a1d424e0434737734fdd',
     'name' => 'bookaroom/app',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'a94ab1e99bec193249bd85f820e5f98408235112',
+      'reference' => '75bdb6c9c862ba4596f5a1d424e0434737734fdd',
     ),
     'graham-campbell/result-type' => 
     array (
