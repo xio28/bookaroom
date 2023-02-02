@@ -19,11 +19,20 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '50ad9861f2c379e49f4d3a24c29872042d62a369',
-    'name' => 'siomara/renting_app',
+    'reference' => 'a94ab1e99bec193249bd85f820e5f98408235112',
+    'name' => 'bookaroom/app',
   ),
   'versions' => 
   array (
+    'bookaroom/app' => 
+    array (
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a94ab1e99bec193249bd85f820e5f98408235112',
+    ),
     'graham-campbell/result-type' => 
     array (
       'pretty_version' => 'v1.1.0',
@@ -41,15 +50,6 @@ private static $installed = array (
       array (
       ),
       'reference' => 'dc5ff11e274a90cc1c743f66c9ad700ce50db9ab',
-    ),
-    'siomara/renting_app' => 
-    array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '50ad9861f2c379e49f4d3a24c29872042d62a369',
     ),
     'symfony/polyfill-ctype' => 
     array (

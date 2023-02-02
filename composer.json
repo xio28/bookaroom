@@ -1,10 +1,10 @@
 {
-    "name": "siomara/renting_app",
+    "name": "bookaroom/app",
     "description": "Proyecto PHP",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "App\\" : "/"
+            "App\\" : "bookaroom/"
         }
     },
     "authors": [
