@@ -7,7 +7,7 @@
 /**
  * Create a namespace
  */
-namespace Controllers;
+namespace App\Controllers;
 
 /**
  * Start session if there's no one
