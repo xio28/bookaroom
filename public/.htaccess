@@ -1,19 +1,18 @@
-# Ponemos en marcha el motor de reescritura del htaccess para que edite las rutas
+# Turn on the htaccess rewrite engine to edit routes.
 RewriteEngine On
 
-# Aquí se comprueba la condición de que si el archivo no es ni un fichero como tal ni un directorio se deberá aplicar el "RewriteRule"
+# Here we check the condition that if the file is neither a file itself nor a directory, the 'RewriteRule' should be applied.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule ^(.*)$ index.php?slug=$1 [L]
 
-# cambiar página de inicio por defecto DirectoryIndex pagina1.html pagina2.htm pagina3.html pagina4.php
-# prevenir acceso a los archivos .htaccess 
+# prevent access to the .htaccess files
 # <files .htaccess> 
 #     order allow,deny 
 #     deny from all 
 # </files>
-# # denegar el acceso a un directorio deny from all
+# deny access to a directory
 # <Directory /renting_app/app/models>
 #     Order allow,deny
 #     Deny from all
