@@ -40,12 +40,12 @@
     /**
      * Create new instances of the `UsersController`, `RoomsController`, `LoginController`, `BookingController` classes
      */
-    $userClass = App\Controllers\UsersController;
+    $userClass = 'App\Controllers\UsersController';
     $roomClass = 'App\\Controllers\\RoomsController';
     $loginClass = 'App\\Controllers\\LoginController';
     $bookingClass = 'App\\Controllers\\BookingController';
 
-    $userClass = '\\' . str_replace(DIRECTORY_SEPARATOR, '\\', $userClass);
+    $userClass = '\\' . str_replace(DIRECTORY_SEPARATOR, '\\', 'App\Controllers\UsersController');
 
     $user = new $userClass();
     $room = new $roomClass();
