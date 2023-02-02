@@ -1,0 +1,21 @@
+{
+    "name": "siomara/renting_app",
+    "description": "Proyecto PHP",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\" : "./",
+            "Controllers\\" : "./controllers",
+            "Model\\" : "./models",
+            "Classes\\" : "./classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "Siomara N Alonso"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}

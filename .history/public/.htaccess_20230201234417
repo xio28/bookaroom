@@ -1,0 +1,19 @@
+# Ponemos en marcha el motor de reescritura del htaccess para que edite las rutas
+RewriteEngine On
+
+# Aquí se comprueba la condición de que si el archivo no es ni un fichero como tal ni un directorio se deberá aplicar el "RewriteRule"
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?slug=$1 [L]
+
+# prevent access a los archivos .htaccess 
+# <files .htaccess> 
+#     order allow,deny 
+#     deny from all 
+# </files>
+# # denegar el acceso a un directorio deny from all
+# <Directory /renting_app/app/models>
+#     Order allow,deny
+#     Deny from all
+# </Directory>
