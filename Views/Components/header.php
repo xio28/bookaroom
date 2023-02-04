@@ -8,10 +8,11 @@ namespace App\Views\Components;
 /**
  * Function to create the header of a page
  * @param string $title The title of the page
+ * La hoja de estilos https://bookaroom-daw.herokuapp.com/app/public/build/css/main.css no se ha cargado porque su tipo MIME, "text/html", no es "text/css".
  * @return void
  */
 function createHeader(string $title) : void {
-    $css = 'app/public/build/css/main.css';
+    $css = 'https://bookaroom-daw.herokuapp.com/app/public/build/css/main.css';
     echo <<<HEADER
         <!DOCTYPE html>
         <html lang="en">
