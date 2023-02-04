@@ -59,7 +59,7 @@
             /**
              * Shows the index template
              */
-            require_once('../views/index.php');
+            require_once('../Views/index.php');
             break;
         
         /**
@@ -71,10 +71,10 @@
              * If the user is not logged in or is not an admin, display a 404 page
              */
             if(isset($_SESSION['login']) && $_SESSION['login']['admin']) {
-                require_once('../views/admin.php');
+                require_once('../Views/admin.php');
             } 
             elseif(!isset($_SESSION['login']) || ((isset($_SESSION['login']) && !$_SESSION['login']['admin']))) {
-                require_once('../views/404.php');
+                require_once('../Views/404.php');
             }
 
             /**
@@ -102,7 +102,7 @@
                 /**
                  * Shows the admin panel
                  */
-                require_once('../views/admin.php');
+                require_once('../Views/admin.php');
             }
 
             break;
@@ -112,12 +112,12 @@
              */
             if($_POST) {
                 $login->validateLogin($_POST);
-                require_once('../views/index.php');
+                require_once('../Views/index.php');
             }
             /**
              * Else shows the login
              */
-            require_once('../views/login.php');
+            require_once('../Views/login.php');
             break;
         case 'logout':
             /**
@@ -125,13 +125,13 @@
              * Then shows the index template to redirect the user to the index
              */
             unset($_SESSION['login']);
-            require_once('../views/index.php');
+            require_once('../Views/index.php');
             break;
         case 'signup':
             /**
              * Shows the signup template
              */
-            require_once('../views/signup.php');
+            require_once('../Views/signup.php');
             /**
              * If signup form is submitted, user controller will handle the post
              */
@@ -143,7 +143,7 @@
             /**
              * Shows the booking template
              */
-            require_once('../views/booking.php');
+            require_once('../Views/booking.php');
             /**
              * Check if user is logged in before processing the submitted form
              * If user is not logged and booking form is submitted, an alert will be displayed 
@@ -162,6 +162,6 @@
             /**
              * Shows the 404 template by default if not valid resource is provided
              */
-            require_once('../views/404.php');
+            require_once('../Views/404.php');
     }
 ?>
