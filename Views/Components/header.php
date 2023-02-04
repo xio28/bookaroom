@@ -12,7 +12,7 @@ namespace App\Views\Components;
  * @return void
  */
 function createHeader(string $title) : void {
-    $css = 'https://bookaroom-daw.herokuapp.com/app/public/build/css/main.css';
+    $css = '/public/build/css/main.css';
     echo <<<HEADER
         <!DOCTYPE html>
         <html lang="en">
@@ -28,7 +28,7 @@ function createHeader(string $title) : void {
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto+Mono:wght@200;300;400&display=swap" rel="stylesheet"> 
                 <link rel="icon" type="image/png" href="/public/build/media/logo/favicon.png">
-                <link rel="stylesheet" href="{$css}">
+                <link type="text/css" href="{$css}">
                 <title>{$title}</title>
             </head>
             <body>
