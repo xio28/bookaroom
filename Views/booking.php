@@ -14,8 +14,8 @@
         session_start();
     }
 
-    require_once 'components/header.php';
-    require_once 'components/footer.php';
+    require_once 'Components/header.php';
+    require_once 'Components/footer.php';
 
     use App\Controllers\RoomsController;
     $roomTb = RoomsController::getRoomsList();

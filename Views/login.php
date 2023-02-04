@@ -6,8 +6,8 @@
      * The page have a single form which is used to get user information in order to log in 
      * The footer is also created
      */
-    require_once 'components/header.php';
-    require_once 'components/footer.php';
+    require_once 'Components/header.php';
+    require_once 'Components/footer.php';
 
     /**
      * Create a header for the login

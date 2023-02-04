@@ -6,8 +6,8 @@
      * A div is displayed with the 404 error message, including an animated Schrödinger's cat gif
      * The footer is also created
      */
-    require_once 'components/header.php';
-    require_once 'components/footer.php';
+    require_once 'Components/header.php';
+    require_once 'Components/footer.php';
     
     App\Views\Components\createHeader("BookARoom");
 ?>

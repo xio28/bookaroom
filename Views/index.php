@@ -8,8 +8,8 @@
      * Also it has a footer with company info, as privacy policy, contact info, social networks, etc.
      * The footer is also created
      */
-    require_once 'components/header.php';
-    require_once 'components/footer.php';
+    require_once 'Components/header.php';
+    require_once 'Components/footer.php';
     
     /**
      * Create a header for the index page

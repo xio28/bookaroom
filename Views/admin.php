@@ -7,8 +7,8 @@
      * The page have several tables that displays through loops the database queries of each table: rooms, booking and users
      * The footer is also created
      */
-    require_once 'components/header.php';
-    require_once 'components/footer.php';
+    require_once 'Components/header.php';
+    require_once 'Components/footer.php';
     
     /**
      * The file use users, booking and rooms controlers
