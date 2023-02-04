@@ -26,7 +26,7 @@
 ?>
 
 <section class="signup__section position-relative text-center d-flex flex-column justify-content-end align-items-center">
-    <div class="p-5 h-75 bg-image position-absolute top-0 start-0 w-100" style="background-image: url('../public/build/media/signupBg.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover; height: 300px;"></div>
+    <div class="p-5 h-75 bg-image position-absolute top-0 start-0 w-100" style="background-image: url('/build/media/signupBg.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover; height: 300px;"></div>
     <div class="card mx-4 mx-md-5 shadow-5-strong w-75" style="margin-top: -100px; background: hsla(0, 0%, 100%, 0.8); backdrop-filter: blur(30px);">
         <div class="card-body py-5 px-md-5">
             <div class="row d-flex justify-content-center">

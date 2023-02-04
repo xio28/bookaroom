@@ -26,7 +26,7 @@
                         <div class="col-lg-6">
                             <div class="card-body p-md-5 mx-md-4">
                                 <div class="text-center">
-                                    <img src="../public/build/media/logo/favicon.png"
+                                    <img src="/build/media/logo/favicon.png"
                                     style="width: calc(3.5rem + 1vw);" alt="logo">
                                     <h4 class="mt-1 mb-5 pb-1">We are Book A Room</h4>
                                 </div>

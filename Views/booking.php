@@ -81,7 +81,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container-fluid">
                 <div class="logo d-flex align-items-center">
-                    <img src="../public/build/media/logo/favicon.png" alt="logo">
+                    <img src="/build/media/logo/favicon.png" alt="logo">
                     <h2 class="mb-0 d-sm-block d-none">Book<span>A</span>Room</h2>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-bs-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -133,7 +133,7 @@
         <section>
             <div class="room-content">
                 <div class="left-img">
-                    <img src="../public/build/media/room<?= $roomRow['id']; ?>.jpg" alt="Habitación premium">
+                    <img src="/build/media/room<?= $roomRow['id']; ?>.jpg" alt="Habitación premium">
                 </div>
                 <div class="right-text px-5">
                     <h2><?= $roomRow['room_type']; ?></h2>

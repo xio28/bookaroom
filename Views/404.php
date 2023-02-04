@@ -19,7 +19,7 @@
         <p class="lead">
             La página que estás buscando igual no existe igual sí, igual existe y no existe, como el gato de Schrödinger.
         </p>
-        <img class="d-block mb-4 m-auto" src="../public/build/media/schrodingers_cat.gif" alt="Gato de Schrödingers">
+        <img class="d-block mb-4 m-auto" src="/build/media/schrodingers_cat.gif" alt="Gato de Schrödingers">
         <a href="index" class="btn btn-info text-light">Mejor vuelve al inicio y te lías menos</a>
     </div>
 </div>

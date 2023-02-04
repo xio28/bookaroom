@@ -22,7 +22,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-white">
                 <div class="container-fluid">
                     <div class="logo d-flex align-items-center">
-                        <img src="../public/build/media/logo/favicon.png" alt="logo">
+                        <img src="/build/media/logo/favicon.png" alt="logo">
                         <h2 class="mb-0 d-sm-block d-none">Book<span>A</span>Room</h2>
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-bs-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,7 +94,7 @@
                         <div class="col">
                             <div class="card shadow-sm">
                                 <div class="img-header">
-                                    <img src="../public/build/media/room1.jpg" alt="habitación premium">
+                                    <img src="/build/media/room1.jpg" alt="habitación premium">
                                 </div>
                                 <div class="card-body">
                                     <h5>Habitación premium</h5>
@@ -109,7 +109,7 @@
                         <div class="col">
                             <div class="card shadow-sm">
                                 <div class="img-header">
-                                    <img src="../public/build/media/room2.jpg" alt="habitación premium">
+                                    <img src="/build/media/room2.jpg" alt="habitación premium">
                                 </div>
                                 <div class="card-body">
                                     <h5>Habitación deluxe</h5>
@@ -124,7 +124,7 @@
                         <div class="col">
                             <div class="card shadow-sm">
                                 <div class="img-header">
-                                    <img src="../public/build/media/room3.jpg" alt="habitación premium">
+                                    <img src="/build/media/room3.jpg" alt="habitación premium">
                                 </div>
                                 <div class="card-body">
                                     <h5>Habitación doble</h5>
@@ -140,7 +140,7 @@
                         <div class="col">
                             <div class="card shadow-sm">
                                 <div class="img-header">
-                                    <img src="../public/build/media/room4.jpg" alt="habitación premium">
+                                    <img src="/build/media/room4.jpg" alt="habitación premium">
                                 </div>
                                 <div class="card-body">
                                     <h5>Habitación familiar</h5>
@@ -155,7 +155,7 @@
                         <div class="col">
                             <div class="card shadow-sm">
                                 <div class="img-header">
-                                    <img src="../public/build/media/room5.jpg" alt="habitación premium">
+                                    <img src="/build/media/room5.jpg" alt="habitación premium">
                                 </div>
                                 <div class="card-body">
                                     <h5>Habitación doble con vistas</h5>
@@ -170,7 +170,7 @@
                         <div class="col">
                             <div class="card shadow-sm">
                                 <div class="img-header">
-                                    <img src="../public/build/media/room6.jpg" alt="habitación premium">
+                                    <img src="/build/media/room6.jpg" alt="habitación premium">
                                 </div>
                                 <div class="card-body">
                                     <h5>Habitación familiar con vistas</h5>
