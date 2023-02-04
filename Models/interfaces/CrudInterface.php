@@ -1,7 +1,7 @@
 <?php
 /**
  * This is a PHP code of an interface named CrudInterface that belongs to the namespace App\Models\Interfaces
- * The interface provides different methods to insert, update, delete, create, etc. that will be implements in other clases
+ * The interface provides different methods to insert, update, delete, create, etc., that will be implements in other clases
  */
 
 /**
