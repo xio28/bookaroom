@@ -11,7 +11,7 @@ namespace App\Views\Components;
  * @return void
  */
 function createHeader(string $title) : void {
-    $css = __DIR__.'/public/build/css/main.css';
+    $css = 'app/public/build/css/main.css';
     echo <<<HEADER
         <!DOCTYPE html>
         <html lang="en">
