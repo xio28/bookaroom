@@ -17,7 +17,7 @@
             $login->checkCredentials($values);
         }
 
-        private function sanitize($data) {
+        private function sanitize(string $data) : string {
             $data = trim($data);
             $data = stripslashes($data);
             $data = htmlspecialchars($data);
