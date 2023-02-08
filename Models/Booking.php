@@ -129,7 +129,6 @@ class Booking implements CrudInterface {
     public function delete(mixed $id) : bool {
         $query = $this->conn->prepare("DELETE FROM booking WHERE book_id = :book_id");
         
-        $data['roomNumUpBooking'] = intval($data['roomNumUpBooking']);
         $query->bindValue(':book_id', $id, \PDO::PARAM_STR);
     
         return $query->execute();
