@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS bookaroomDB;
+USE bookaroomDB;
+
+CREATE TABLE users(
+    nid VARCHAR(9) NOT NULL UNSIGNED PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    surname VARCHAR(30) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    telephone VARCHAR(11) NOT NULL,
+    password VARCHAR(30) NOT NULL,
+    admin BOOL DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE room(
+    id INT(3) NOT NULL UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    description VARCHAR(200) NOT NULL,
+    max_capacity INT(2) NOT NULL,
+    room_type VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE booking(
+    book_id INT(3) NOT NULL UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user_nid VARCHAR(9) NOT NULL,
+    room_id INT(3) NOT NULL UNSIGNED,
+    check_in DATE NOT NULL,
+    check_out DATE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT `fk1_booking_user`
+        FOREIGN KEY (`user_nid`) REFERENCES user (`nid`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+
+    CONSTRAINT `fk2_booking_room`
+        FOREIGN KEY (`room_id`) REFERENCES user (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);

@@ -1,5 +1,5 @@
 {
-    "name": "siomara/renting_app",
+    "name": "bookaroom/app",
     "description": "Proyecto PHP",
     "type": "project",
     "autoload": {
