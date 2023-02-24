@@ -1,6 +1,13 @@
 # Book a Room
 
-[TOC]
+## Content Table
+1. [Description](#description)
+2. [Prerequisites](#prerequisites)
+3. [Installation](#installation)
+4. [To Do](#to-do)
+5. [Documentation](#documentation)
+6. [Author](#author)
+7. [License](#license)
 
 
 ## Description

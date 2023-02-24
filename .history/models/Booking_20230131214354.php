@@ -16,7 +16,7 @@ class Booking implements CrudInterface {
     }
 
     public function insert($data) : void {
-        $table = get_class($this);
+
         $stmt = $this->conn->prepare("INSERT INTO booking (user_nid, room_id, check_in, check_out) VALUES (:user_nid, :room_id, :check_in, :check_out)");
         $stmt->bindValue(":user_nid", $data['bookRoomNid'], \PDO::PARAM_STR); // Hay que poner una contra barra a PDO, porque si no el método entiende que es una estática de la misma clase
         $stmt->bindValue(":room_id", intval($data['bookRoomRId']), \PDO::PARAM_INT);
