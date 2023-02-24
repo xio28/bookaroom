@@ -29,12 +29,12 @@ CREATE TABLE booking(
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT `fk1_booking_user`
-        FOREIGN KEY (`user_nid`) REFERENCES user (`nid`)
+        FOREIGN KEY (`user_nid`) REFERENCES users (`nid`)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
 
     CONSTRAINT `fk2_booking_room`
-        FOREIGN KEY (`room_id`) REFERENCES user (`id`)
+        FOREIGN KEY (`room_id`) REFERENCES room (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );

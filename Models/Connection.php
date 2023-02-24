@@ -86,7 +86,7 @@ class Connection {
     }
 
     /**
-     * Private static this function, based on Singleton design pattern, checks if the instance created it's a itself instance
+     * Private static this function, based on Singleton design pattern, checks if the instance created it's an itself instance
      *
      * @return object The instance of this class
      */
