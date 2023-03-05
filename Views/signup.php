@@ -1,27 +1,11 @@
 <?php
-    /**
-     * This file displays the signup form
-     *
-     * The header and footer partials are required, and the header is created with the title "Signup"
-     * The page have a single form which is used to get user information in order to log in 
-     * The footer is also created
-     */
-    
-    /**
-     * Start session if there's no one
-     */
-    if (session_status() == PHP_SESSION_NONE) {
+    if(session_status() == PHP_SESSION_NONE) {
         session_start();
     }
     
     require_once 'Components/header.php';
     require_once 'Components/footer.php';
 
-    /**
-     * Create a header for the signup
-     * 
-     * @param string $title The title to display in the header
-     */
     App\Views\Components\createHeader("Signup");
 ?>
 
@@ -117,12 +101,6 @@
     </div>
 </section>
 <script>
-    /**
-     * This script sets a timer for 5000 milliseconds (5 seconds)
-     * The finds the first element on the page with a class of 'alert'
-     * Finally sets the 'display' property of the 'alertModal' to 'none', making it disappear from the page
-     */
-    
     // This line sets a timer for 5000 milliseconds (5 seconds)
     setTimeout(() => {
         // The next line finds the first element on the page with a class of 'alert'
@@ -132,9 +110,6 @@
     }, 5000);
 </script>
 <?php
-    /**
-     * Destroy the session alert
-     */
     unset($_SESSION['alert']);
     App\Views\Components\createFooter();
 ?>
