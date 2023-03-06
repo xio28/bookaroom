@@ -69,6 +69,7 @@ Temporary Items
 !.vscode/*.code-snippets
 
 # Local History for Visual Studio Code
+/.history/
 .history/
 
 # Built Visual Studio Code Extensions
