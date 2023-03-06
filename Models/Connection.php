@@ -26,7 +26,7 @@ class Connection {
             $connetion = new \PDO('mysql:host='.$host.';charset='.$charset.'', $_ENV['DB_USER'], $_ENV['DB_PASS'], $options);
 
             $connetion->exec("CREATE DATABASE IF NOT EXISTS " . $db);
-            $connetion->exec("use " . $db);
+            $connetion->exec("USE " . $db);
 
             $this->conn = $connetion;
             
@@ -44,6 +44,5 @@ class Connection {
     }
 
 }
-
 
 ?>
